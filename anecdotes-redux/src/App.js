@@ -16,11 +16,13 @@ const App = () => {
     event.target.anecdote.value = ""
     dispatch(createAnecdote(content))
   }
+  
+  const byVotes = (v1, v2) => v2.votes - v1.votes
 
   return (
     <div>
       <h2>Anecdotes</h2>
-      {anecdotes.map(anecdote =>
+      {anecdotes.sort(byVotes).map(anecdote =>
         <div key={anecdote.id}>
           <div>
             {anecdote.content}
