@@ -1,7 +1,7 @@
 export const createAnecdote = (anecdote) => {
   return {
     type: 'NEW_ANECDOTE',
-    data: asObject(anecdote)
+    data: anecdote
   }
 }
 
@@ -16,13 +16,6 @@ export const initializeAnecdotes = (anecdotes) => {
   return {
     type: 'INIT_ANECDOTES',
     data: anecdotes
-  }
-}
-
-const asObject = (anecdote) => {
-  return {
-    content: anecdote,
-    votes: 0
   }
 }
 
